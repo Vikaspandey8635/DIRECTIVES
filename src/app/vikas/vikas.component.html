@@ -1,0 +1,34 @@
+<p>vikas works!</p>
+
+<div >
+ 
+   
+  <div *ngIf="isvalid; then thisblock else elseblock"></div>
+
+  <ng-template #thisblock>
+      
+    <section> 
+        <h2 [ngStyle]="{'color':'red','font-weight':'bold'}">my block </h2>    
+        block has created
+    </section>
+   
+  </ng-template>
+  <ng-template #elseblock>
+    
+    <section>
+        <h2 [ngStyle]="{'color':'green','font-weight':'bold'}"> no block</h2>
+        no block created
+    </section>
+
+  </ng-template>
+    
+  <div [ngClass]="'isvalid'?'thisblock': 'elseblock'">
+     hello
+ 
+  </div>
+
+</div>
+<br>
+<br>
+<button (click)="oncreateblock()">Create</button>
+
